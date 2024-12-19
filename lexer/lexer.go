@@ -1,6 +1,6 @@
 package lexer
 
-import "go/token"
+import "main/token"
 
 type Lexer struct {
 	input        string
@@ -43,6 +43,7 @@ func newToken(tokenType token.TokenType, ch byte) token.Token {
 
 func New(input string) *Lexer { // New returns a new Lexer instance
 	l := &Lexer{input: input}
+	l.readChar()
 	return l
 }
 
