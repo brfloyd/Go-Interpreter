@@ -7,7 +7,14 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
-	input := `=+(){},;`
+	input := `let five = 5;
+    let ten = 10;
+    let add = fn(x, y) {
+      x + y;
+    };
+    let result = add(five, ten);
+  `
+
 	tests := []struct {
 		expectedType    token.TokenType
 		expectedLiteral string
@@ -76,19 +83,4 @@ func TestNextToken(t *testing.T) {
 		}
 	}
 
-}
-
-func testNextToken(t *testing.T) {
-	input := `let five = 5;
-    let ten = 10;
-    let add = fn(x, y) {
-      x + y;
-    };
-    let result = add(five, ten);
-  `
-
-	tests := []struct {
-		expectedType    token.TokenType
-		expectedLiteral string
-	} // [...]
 }
