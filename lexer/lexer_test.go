@@ -9,6 +9,8 @@ import (
 func TestNextToken(t *testing.T) {
 	input := `let five = 5;
     let ten = 10;
+
+
     let add = fn(x, y) {
       x + y;
     };
@@ -54,15 +56,6 @@ func TestNextToken(t *testing.T) {
 		{token.COMMA, ","},
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
-		{token.SEMICOLON, ";"},
-		{token.EOF, ""},
-		{token.ASSIGN, "="},
-		{token.PLUS, "+"},
-		{token.LPAREN, "("},
-		{token.RPAREN, ")"},
-		{token.LBRACE, "{"},
-		{token.RBRACE, "}"},
-		{token.COMMA, ","},
 		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
 	}
